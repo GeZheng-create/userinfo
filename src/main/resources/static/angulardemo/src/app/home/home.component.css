@@ -1,0 +1,30 @@
+ 
+table,
+th,
+td {
+border: 1px solid grey;
+border-collapse: collapse;
+padding: 10px;
+}
+
+table tr:nth-child(odd) {
+background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+background-color: #ffffff;
+}
+ 
+div{margin:15px;border:5;padding:5;}
+
+button{background-color:grey; 
+    color: black;
+    width: 90px;
+    border-radius: 10px;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+ }
+

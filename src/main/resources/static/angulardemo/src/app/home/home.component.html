@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div class="container">
+        <form>
+            <h2>User Input</h2>
+            <div class="form-group">     
+                <input [(ngModel)]="id" type="hidden" id="id" name="id">
+                Name: <input [(ngModel)]="name" id="name" name="name" class="form-control" required="required" />
+                Gender: <input [(ngModel)]="gender" id="gender" name="gender" name="gender" required="required" />
+                Age: <input [(ngModel)]="age" id="age" name="age" required="required" />
+                Hobby: <input [(ngModel)]="hobby" id="hobby" name="hobby" />
+                Status: <input [(ngModel)]="status" id="status" name="status" />
+                Profession: <input [(ngModel)]="profession" id="profession" name="profession" />
+            </div>
+            <button id="submit" type="button" style="margin-right:20px;" (click)="add()">Add</button>
+            <button id="submit" type="button" style="margin-right:20px;" (click)="update()">Update</button>
+        </form>
+
+            <h2>User Info</h2>
+            <div class="form-group">
+                <table>
+                    <td>
+                        <h4>Id</h4>
+                    </td>
+                    <td>
+                        <h4>Name</h4>
+                    </td>
+                    <td>
+                        <h4> Gender</h4>
+                    </td>
+                    <td>
+                        <h4> Age</h4>
+                    </td>
+                    <td>
+                        <h4>Hobby</h4>
+                    </td>
+                    <td>
+                        <h4> Status</h4>
+                    </td>
+                    <td>
+                        <h4> Profession</h4>
+                    </td>
+
+                    <tr *ngFor="let user of users">
+                        <td>
+                            <input type="radio" (click)="selectedId(user.id)" name="selectedRow" [(ngModel)]="selectedIds" value="{{ user.id }}">
+                        </td>
+                        <td> {{ user.name }}</td>
+                        <td> {{ user.gender }}</td>
+                        <td> {{ user.age }}</td>
+                        <td> {{ user.hobby }}</td>
+                        <td> {{ user.status }}</td>
+                        <td> {{ user.profession }}</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="upd" role="upduser">
+                <!-- <button id="update" type="button" style="margin-right:20px;" (click)="update()">Update</button> -->
+                <button id="delete" type="button" style="margin-right:20px;" (click)="delete()">Delete</button>
+            </div>
+    </div>
+</body>
+
+</html>
